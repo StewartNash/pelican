@@ -1,13 +1,9 @@
-#from pathlib import Path
 import os
 import sys
 
-#current_directory = Path.cwd()
-current_directory = os.getcwd()
-library_path = current_directory
-if library_path not in sys.path:
-	sys.path.append(library_path)
+#sys.path.append(os.path.join(os.path.dirnmae(__file__), 'utilities')
+sys.path.append(os.path.dirname(__file__))
 
-import pixelturtle
+from pixelturtle import PixelTurtle
 
 my_turtle  pixelturtle.PixelTurtle()
