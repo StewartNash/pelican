@@ -1,12 +1,21 @@
-import os
-import sys
+#import os
+#import sys
 
-#sys.path.append(os.path.join(os.path.dirnmae(__file__), 'utilities')
-sys.path.append(os.path.dirname(__file__))
+##sys.path.append(os.path.join(os.path.dirnmae(__file__), 'utilities')
+#sys.path.append(os.path.dirname(__file__))
 
-from pixelturtle import PixelTurtle
+#from pixelturtle import PixelTurtle
 
-my_turtle  pixelturtle.PixelTurtle()
+#my_turtle  pixelturtle.PixelTurtle()
+
+import ScriptEnv
+
+class HfssInterface:
+    def __init__(self):
+        ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
+        oDesktop.RestoreWindow()
+        self.project = oDesktop.GetActiveProject()
+        self.design = self.project.SetActiveDesign("HFSSDesign1")
 
 class HfssPixelArray:
     def __init__(self, o_design, pattern):
@@ -28,6 +37,8 @@ class HfssPixelArray:
         
         self.axis = "Z"
         self.color = "(143 175 143)"
+        
+        self.add_variables()
         
     def draw(self):
         for (x, y) in self.pattern:
