@@ -46,19 +46,19 @@ class HfssPixelArray:
             
     def add_variables(self):
         self.design.ChangeProperty(
-            ["NAME:AllTabs", ["NAME:LocalVariabelTab",
+            ["NAME:AllTabs", ["NAME:LocalVariableTab",
                 ["NAME:PropServers", "LocalVariables"],
-                ["NAME:NewProps", ["NAME:" + self.width_name, "PropTypes:=", "VariableProp", "UserDef:=", True, "Values:=", str(self.pixel_width) + self.pixel_width_unit]]
+                ["NAME:NewProps", ["NAME:" + self.width_name, "PropType:=", "VariableProp", "UserDef:=", True, "Value:=", str(self.pixel_width) + self.pixel_width_unit]]
             ]])
         self.design.ChangeProperty(
-            ["NAME:AllTabs", ["NAME:LocalVariabelTab",
+            ["NAME:AllTabs", ["NAME:LocalVariableTab",
                 ["NAME:PropServers", "LocalVariables"],
-                ["NAME:NewProps", ["NAME:" + self.length_name, "PropTypes:=", "VariableProp", "UserDef:=", True, "Values:=", str(self.pixel_length) + self.pixel_length_unit]]
+                ["NAME:NewProps", ["NAME:" + self.length_name, "PropType:=", "VariableProp", "UserDef:=", True, "Value:=", str(self.pixel_length) + self.pixel_length_unit]]
             ]])
         self.design.ChangeProperty(
-            ["NAME:AllTabs", ["NAME:LocalVariabelTab",
+            ["NAME:AllTabs", ["NAME:LocalVariableTab",
                 ["NAME:PropServers", "LocalVariables"],
-                ["NAME:NewProps", ["NAME:" + self.height_name, "PropTypes:=", "VariableProp", "UserDef:=", True, "Values:=", str(self.pixel_height) + self.pixel_height_unit]]
+                ["NAME:NewProps", ["NAME:" + self.height_name, "PropType:=", "VariableProp", "UserDef:=", True, "Value:=", str(self.pixel_height) + self.pixel_height_unit]]
             ]])
             
     def draw_rectangle(self, x, y):
@@ -71,7 +71,7 @@ class HfssPixelArray:
                 "YStart:=", str(y) + " * " + self.length_name,
                 "ZStart:=", self.height_name,
                 "Width:=", self.width_name,
-                "Height:=", self.height_name,
+                "Height:=", self.length_name,
                 "WhichAxis:=", self.axis
             ],
             [
